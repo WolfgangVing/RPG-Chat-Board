@@ -12,12 +12,12 @@ export const characterStore = defineStore("CharacterSheet", {
         experiencePoints: 0,
         proficiencyBonus: 0,
         savingThrows: {
-            charisma: null,
-            constitution: null,
-            dexterity: null,
-            intelligence: null,
-            strength: null,
-            wisdom: null
+            charisma: [false, 0],
+            constitution: [false, 0],
+            dexterity: [false, 0],
+            intelligence: [false, 0],
+            strength: [false, 0],
+            wisdom: [false, 0]
         },
         attributes: {
             strength: 10,
@@ -42,10 +42,33 @@ export const characterStore = defineStore("CharacterSheet", {
                 const attrValue = state.attributes[key]
                 const baseModifier = (attrValue - 10) / 2;
                 state.modifiers[key] = attrValue < 10 ? Math.floor(baseModifier * -1) * -1 : Math.floor(baseModifier)
-                return state.modifiers
             }
         
             return state.modifiers;
+        },
+        characterSavingThrowsModifiers: (state) => {
+            for(const key in state.savingThrows) {
+                const isProficienty = state.savingThrows[key][0]
+                const proficiencyBonus = state.savingThrows[key][1]
+                state.savingThrows[key][1] = !isProficienty ? state.modifiers[key] : state.modifiers[key] + state.proficiencyBonus
+            }
+
+            return state.savingThrows
+        },
+        getProficiencyBOnus: (state) => {
+            const level = state.classLevel[1];
+            
+            if(level > 0 && level <= 4) {
+                return state.proficiencyBonus = 2;
+            } else if(level > 4 && level <= 8) {
+                return state.proficiencyBonus = 3;
+            } else if(level > 8 && level <= 12) {
+                return state.proficiencyBonus = 4;
+            } else if(level > 12 && level <= 16) {
+                return state.proficiencyBonus = 5;
+            } else if(level >16 && level <= 20) {
+                return state.proficiencyBonus = 6;
+            }
         }
     }
 })

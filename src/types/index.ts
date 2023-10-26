@@ -38,17 +38,30 @@ type TModifiers = {
  * First index [0] is a boolean representing if character is proeficient in that saving, the number should be the modifier + Proficiente Bonus
  */
 type TSavethrows = {
-    [key: string]: [boolean, number] | null,
-    "strength": [boolean, number] | null,
-    "dexterity": [boolean, number] | null,
-    "constitution": [boolean, number] | null,
-    "intelligence": [boolean, number] | null,
-    "wisdom": [boolean, number] | null,
-    "charisma": [boolean, number] | null
+    [key: string]: [boolean, number],
+    "strength": [boolean, number],
+    "dexterity": [boolean, number],
+    "constitution": [boolean, number],
+    "intelligence": [boolean, number],
+    "wisdom": [boolean, number],
+    "charisma": [boolean, number]
 }
 
 type TCharacterSheet = {
     attributes: TAttributes,
     modifiers: TAttributes //Follows the same grammar for key, and value is also number. In caso is needed to use shorted term just cut it.
 }
-export type {TAttributes, TModifiers, TCharacterSheet, TCharacter}
+
+type TDice = {
+    [key: string]: number,
+    "1d4": 4,
+    "1d6": 6,
+    "1d8": 8,
+    "1d10": 10,
+    "1d12": 12,
+    "1d20": 20 
+}
+type Dice = 4 | 6 | 8 | 10 | 12 | 20
+
+
+export type {TAttributes, TModifiers, TCharacterSheet, TCharacter, TDice}

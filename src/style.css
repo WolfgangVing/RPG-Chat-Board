@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+
+.round-checkbox {
+    position: relative;
+    padding-left: 35px; /* Adjust the size of the round checkbox */
+    cursor: pointer;
+    user-select: none;
+}
+
+.round-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px; /* Adjust the size of the round checkbox */
+    width: 24px; /* Adjust the size of the round checkbox */
+    background-color: #ccc;
+    border-radius: 50%; /* Make it round */
+}
+
+.round-checkbox input:checked + .checkmark {
+    background-color: #2196F3; /* Color for checked state */
+}
+
+.round-checkbox input:checked + .checkmark:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px; /* Adjust the size of the checkmark inside the round checkbox */
+    height: 10px; /* Adjust the size of the checkmark inside the round checkbox */
+    background-color: #fff; /* Color of the checkmark */
+    border-radius: 50%; /* Make it round */
+}
