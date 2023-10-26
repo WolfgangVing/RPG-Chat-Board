@@ -1,18 +1,16 @@
 <template>
-    <div class="tw-flex tw-flex-col tw-gap-2 tw-justify-around tw-mt-10 tw-w-min cols">
-            <div v-for="(attribute, key) in store.attributes" 
-                :key="key" 
-                class="tw-flex tw-flex-col tw-w-20 tw-align-middle tw-text-center tw-border-2 tw-rounded"
+    <div class="tw-flex tw-flex-col tw-gap-5 tw-justify-around tw-w-min cols tw-bg-gray-200 tw-p-2 tw-rounded-md">
+        <div v-for="(attribute, key) in store.attributes" :key="key"
+            class="tw-flex tw-flex-col tw-w-20 tw-align-middle tw-text-center tw-border-2 tw-border-slate-900 tw-rounded tw-pt-1 tw-pb-3 tw-bg-white">
 
-            >
-                <div class="">
-                    <p>{{ key.toString().slice(0, 3) }}</p>
-                    <P>{{ store.modifiers[key] }}</P>
-                </div>
-                <input type="number" v-model="store.attributes[key]" @input="handleAttributeInput(key, $event)" 
-                    class="tw-text-center tw-flex tw-rounded-[50%] tw-border-2" />
+            <p>{{ key.toString().slice(0, 3) }}</p>
+            <P>{{ store.modifiers[key] }}</P>
+            <div class="tw-flex tw-justify-center tw-relative">
+                <input type="number" v-model="store.attributes[key]" @input="handleAttributeInput(key, $event)"
+                    class="tw-text-center tw-flex tw-rounded-[50%] tw-border-2 tw-border-black tw-w-2/3 tw-absolute" />
             </div>
         </div>
+    </div>
 </template>
 
 <script setup lang="ts">

@@ -1,11 +1,11 @@
 <template>
     <CharacterInfo />
     <div class="tw-max-w-5xl tw-p-2 tw-flex tw-flex-row tw-container tw-mt-6">
-        <div class="tw-w-1/3 tw-grid tw-flex-col">
-            Column 1
-
+        <div class="tw-w-1/3 tw-flex tw-flex-row tw-justify-around tw-mt-10">
             <Attributes />
-            <SavingThrowVue />
+            <div>
+                <SavingThrowVue />
+            </div>
         </div>
         <div class="tw-w-1/3 tw-grid tw-flex-col">
             Column 2

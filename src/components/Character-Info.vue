@@ -16,7 +16,7 @@
                     </div>
                     <div class="tw-border-b-2 tw-border-black tw-mr-2">
                         <p>Race</p>
-                        <input type="text" v-mofodel="store.race" id="classLevel">
+                        <input type="text" v-model="store.race" id="classLevel">
                     </div>
                     <div class="tw-border-b-2 tw-border-black tw-mr-2">
                         <p>Allignment</p>
