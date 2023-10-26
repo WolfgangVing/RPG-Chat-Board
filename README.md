@@ -1,68 +1,53 @@
-# rpg-character-sheet
+# Rpg-chat-board
 
-This template should help get you started developing with Vue 3 in Vite.
+Rpg-chat-board is an application for tabletop RPG players, with the aim of providing a platform for character sheets creation, chat for conversations, and dice rolling. Since it's in an early stage, considering I'm developing it alone and the lack of skills, the application is being built as PC-first, but it aims to become multiplatform.
 
-## Recommended IDE Setup
+### Technologies
+The technologies used will be divided between the client and server, or more precisely, frontend and backend, with two databases as the data layer.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+1. Client/Front-end 
+   - Node 
+   - Vue 3
+   - Pinia - Store & State Managment
+   - Routing - For SPA routing.
 
-## Type Support for `.vue` Imports in TS
+2. Server/Back-end
+   - Node
+   - Nest.js - At now,the only framework which has Websocket and REST API.
+   - Socket.io - Real-time-data framework for the chat session.
+3.
+   - MongoDB - NoSQL intended to save chat sessions, users sheet, and sessions id.
+   - Redis-json - In-Memory storage/db, inteded to keep the chat sessions and sheet of users.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Installation
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+For now, there are only instructions for installing the project for development purposes.
 
-## Customize configuration
+1. Clone the project
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+```bash
+git clone [this-link-project]
+```
 
-## Project Setup
-
-```sh
+2. Install dependencies.
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
+3. Run the project as dev.
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## Contributing
 
-```sh
-npm run build
-```
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+Please make sure to update tests as appropriate.
 
-```sh
-npm run test:unit
-```
+## License
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+[MIT](https://choosealicense.com/licenses/mit/)
 
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
