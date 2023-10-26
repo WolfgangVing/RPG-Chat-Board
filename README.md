@@ -27,7 +27,7 @@ For now, there are only instructions for installing the project for development 
 1. Clone the project
 
 ```bash
-git clone [this-link-project]
+git clone https://github.com/WolfgangVing/RPG-Chat-Board.git
 ```
 
 2. Install dependencies.
