@@ -65,6 +65,8 @@ watch(classLevel, (newClassLevel, oldClassLevel) => {
         store.classLevel = ["", 0]
     } else if (!Number.isNaN(parseInt(level))) {
         store.classLevel = [chClass, parseInt(level)]
+        store.getProficiencyBonus
+        store.getSkills
     }
 })
 </script>
