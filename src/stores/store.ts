@@ -54,7 +54,10 @@ export const characterStore = defineStore("CharacterSheet", {
             "Sleight of Hand": [false, "dexterity", 0],
             "Stealth": [false, "dexterity", 0],
             "Survival": [false, "wisdom", 0]
-        }
+        },
+        armorClass: null,
+        speed: null,
+        initiative: null,
     }),
     getters: {
         characterAttributeModifier: (state) => {
@@ -93,9 +96,9 @@ export const characterStore = defineStore("CharacterSheet", {
             for (const key in state.skills) {
                 const isProficienty = state.skills[key][0]
                 const attributeName = state.skills[key][1]
-                state.skills[key][2] = isProficienty ? 
-                state.modifiers[attributeName] + state.proficiencyBonus : 
-                state.modifiers[attributeName]
+                state.skills[key][2] = isProficienty ?
+                    state.modifiers[attributeName] + state.proficiencyBonus :
+                    state.modifiers[attributeName]
             }
 
             return state.skills

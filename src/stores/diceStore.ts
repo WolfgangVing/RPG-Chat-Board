@@ -11,12 +11,13 @@ export const useDiceStore = defineStore("diceSotre", {
             "1d8": 8,
             "1d10": 10,
             "1d12": 12,
-            "1d20": 20 
+            "1d20": 20
         } as TDice
     }),
     actions: {
-        rollDice(dice: keyof TDice){
-            this.result = Math.floor(Math.random() * this.diceType[dice]) +1
+        rollDice(dice: keyof TDice) {
+            const diceRolled = Math.floor(Math.random() * this.diceType[dice]) + 1
+            return diceRolled
         }
     }
 })

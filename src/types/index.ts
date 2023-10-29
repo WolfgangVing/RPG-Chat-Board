@@ -13,6 +13,9 @@ type TCharacter = {
     proficiencyBonus: number,
     savingThrows: TSavethrows
     skills: TSkills
+    armorClass: number | null
+    speed: number | null
+    initiative: number | null
 }
 
 type TAttributes = {

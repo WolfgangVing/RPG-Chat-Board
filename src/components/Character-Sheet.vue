@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="tw-w-1/3 tw-grid tw-flex-col">
-            Column 2
+            <CombatStatus />
         </div>
         <div class="tw-w-1/3 tw-grid tw-flex-col">
             Column 3
@@ -26,5 +26,6 @@ import Attributes from "./Attributes.vue";
 import Inspiration from "./Inspiration.vue";
 import  ProficiencyBonus from "./Proficiency-Bonus.vue";
 import Skills from "./Skills.vue";
+import CombatStatus from "./Combat-Status.vue";
 
 </script>
