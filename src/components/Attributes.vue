@@ -1,5 +1,5 @@
 <template>
-    <div class="tw-flex tw-flex-col tw-gap-2 tw-justify-around tw-w-min cols tw-bg-gray-200 tw-p-2 tw-rounded-md">
+    <div class="tw-flex tw-flex-col tw-justify-around tw-w-min cols tw-bg-gray-200 tw-p-2 tw-rounded-md">
         
         <div
             class="tw-flex tw-flex-col tw-w-20 tw-align-middle tw-text-center tw-border-2 tw-border-slate-900 tw-rounded tw-pt-1 tw-pb-3 tw-bg-white">
@@ -83,4 +83,5 @@ const handleAttributeInput = (key: keyof TAttributes, event: Event) => {
     }
 
 }
+
 </script>
